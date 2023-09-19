@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дильмухамедова Залина 6 вариант</title>
+    <script>
+        function processString() {
+            var string = prompt("Введите строку:");
+            var modifiedString = string.replace(/PQ/g, "");
+            var dotCount = modifiedString.split(".").length - 1;
+            var commaCount = modifiedString.split(",").length - 1;
+
+            document.getElementById("originalString").innerHTML = "Начальная строка: " + string;
+            document.getElementById("modifiedString").innerHTML = "Измененная строка: " + modifiedString;
+            document.getElementById("dotCount").innerHTML = "Количество точек: " + dotCount;
+            document.getElementById("commaCount").innerHTML = "Количество запятых: " + commaCount;
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="processString()">Обработать строку</button>
+    <div id="originalString"></div>
+    <div id="modifiedString"></div>
+    <div id="dotCount"></div>
+    <div id="commaCount"></div>
+</body>
+</html>

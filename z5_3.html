@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дильмухамедова Залина </title>
+    <script>
+        function encryptString() {
+            var string = prompt("Введите строку:");
+            var encryptedString = "";
+
+            for (var i = 0; i < string.length; i++) {
+                var charCode = string.charCodeAt(i);
+
+                // 
+                if ((charCode >= 1040 && charCode <= 1071) || (charCode >= 1072 && charCode <= 1103)) {
+                    // 
+                    charCode++;
+                    
+                    // 
+                    if (charCode === 1104 || charCode === 1072) {
+                        charCode -= 32;
+                    }
+                }
+
+                encryptedString += String.fromCharCode(charCode);
+            }
+
+            document.getElementById("originalString").innerHTML = "Начальная строка: " + string;
+            document.getElementById("encryptedString").innerHTML = "Зашифрованная строка: " + encryptedString;
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="encryptString()">Зашифровать строку</button>
+    <div id="originalString"></div>
+    <div id="encryptedString"></div>
+</body>
+</html>

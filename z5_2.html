@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дильмухамедова Залина </title>
+    <script>
+        function processString() {
+            var string = prompt("Введите слова через пробел:");
+            var wordsStartingWithA = 0;
+            var modifiedString = "";
+
+            var words = string.split(" ");
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].charAt(0).toUpperCase() === "A"|| words[i].charAt(0).toUpperCase() === "А")  {
+                    wordsStartingWithA++;
+                }
+            }
+
+            var lastWordIndex = words.length - 2;
+            for (var j = 0; j < words[lastWordIndex].length; j++) {
+                modifiedString += words[lastWordIndex].charAt(j) + "*";
+            }
+
+            document.getElementById("originalString").innerHTML = "Начальная строка: " + string;
+            document.getElementById("modifiedString").innerHTML = "Измененная строка: " + modifiedString;
+            document.getElementById("wordsStartingWithA").innerHTML = "Количество слов, начинающихся с буквы 'A': " + wordsStartingWithA;
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="processString()">Обработать строку</button>
+    <div id="originalString"></div>
+    <div id="modifiedString"></div>
+    <div id="wordsStartingWithA"></div>
+</body>
+</html>

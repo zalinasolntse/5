@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дильмухамедова Залина </title>
+    <script>
+        function shuffleLetters() {
+            var word = prompt("Введите слово:");
+            var shuffledWord = "";
+
+            var words = word.split(" ");
+
+            for (var i = 0; i < words.length; i++) {
+                var currentWord = words[i];
+                var firstLetter = currentWord.charAt(0);
+                var lastLetter = currentWord.charAt(currentWord.length - 1);
+                var middleLetters = currentWord.slice(1, currentWord.length - 1);
+
+                // 
+                var shuffledMiddleLetters = "";
+                for (var j = 0; j < middleLetters.length; j++) {
+                    var randomIndex = Math.floor(Math.random() * middleLetters.length);
+                    shuffledMiddleLetters += middleLetters.charAt(randomIndex);
+                }
+
+                var shuffledCurrentWord = firstLetter + shuffledMiddleLetters + lastLetter;
+                shuffledWord += shuffledCurrentWord + " ";
+            }
+
+            document.getElementById("originalWord").innerHTML = "Исходное слово: " + word;
+            document.getElementById("shuffledWord").innerHTML = "Перемешанное слово: " + shuffledWord;
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="shuffleLetters()">Перемешать буквы</button>
+    <div id="originalWord"></div>
+    <div id="shuffledWord"></div>
+</body>
+</html>
